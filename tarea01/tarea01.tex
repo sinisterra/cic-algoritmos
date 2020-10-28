@@ -20,7 +20,7 @@
   Si $f(n)$ es $\Omicron(g(n))$ y $g(n)$ es $\Omicron(h(n))$ $\Rightarrow$ $f(n)$ es $\Omicron(h(n))$
 \end{propiedad}
 
-\br El antecedente tiene dos partes. La primera, $f(n)$ es $\Omicron(g(n))$, es verdadera si hay dos constantes $n_f$ y $c_f$ tal que para toda $n \geq n_f$,  $c_f g(n) \geq f(n)$.
+\br $f(n)$ es $\Omicron(g(n))$ es verdadero si hay dos constantes $n_f$ y $c_f$ tal que para toda $n \geq n_f$,  $c_f g(n) \geq f(n)$.
 
 \br La segunda, la afirmación de $g(n)$ es $\Omicron(h(n))$ es verdadera si hay dos constantes $n_g$ y $c_g$ tal que para toda $n \geq n_g$,  $c_g h(n) \geq g(n)$.
 
@@ -32,9 +32,25 @@
   Si $f(n)$ es $\Omega(g(n))$ y $g(n)$ es $\Omega(h(n))$ $\Rightarrow$ $f(n)$ es $\Omega(h(n))$
 \end{propiedad}
 
+\br $f(n)$ es $\Omega(g(n))$ es verdadero si hay dos constantes $n_f$ y $c_f$ tal que para toda $n \geq n_f$,  $c_f g(n) \leq f(n)$.
+
+\br La segunda, la afirmación de $g(n)$ es $\Omega(h(n))$ es verdadera si hay dos constantes $n_g$ y $c_g$ tal que para toda $n \geq n_g$,  $c_g h(n) \leq g(n)$.
+
+\br Ambas afirmaciones se realizan a partir de la definición de $\Omega$.
+
+\br El consecuente indica que $f(n)$ es $\Omega(h(n))$ si hay hay dos constantes $n_h$ y $c_h$ tal que para toda $n \geq n_h$,  $c_h h(n) \leq f(n)$. $c_h$ debe ser igual a $c_f c_g$ y $n_h$ debe ser igual al valor mayor entre $n_f$ y $n_g$, o sea $\max \{n_f, n_g \}$.
+
 \begin{propiedad}
   Si $f(n)$ es $\Theta(g(n))$ y $g(n)$ es $\Theta(h(n))$ $\Rightarrow$ $f(n)$ es $\Theta(h(n))$
 \end{propiedad}
+
+\br $f(n)$ es $\Theta(g(n))$ si hay dos constantes $c_{1f}$ y $c_{2f}$ tales que $c_{1f}g(n) \geq f(n)$ (pertenencia a $\Omicron$) y $c_{2f}g(n) \leq f(n)$ (pertenencia a $\Omega$); así como un valor $n_f$ para el cual, para toda $n \geq n_f$, $c_{1f}g(n) \leq f(n)$ y $c_{2f}g(n) \geq f(n)$.
+
+\br $g(n)$ es $\Theta(h(n))$ si hay dos constantes $c_{1g}$ y $c_{2g}$ tales que $c_{1g}h(n) \geq g(n)$ (pertenencia a $\Omicron$) y $c_{2g}h(n) \leq g(n)$ (pertenencia a $\Omega$); así como un valor $n_g$ para el cual, para toda $n \geq n_g$, $c_{1g}h(n) \geq g(n)$ y $c_{2g}h(n) \leq g(n)$.
+
+\br $f(n)$ es $\Theta(h(n))$ si hay dos constantes $c_{1h}$ y $c_{2h}$, así como un valor $n_h$ para el cual $c_{1h}h(n) \geq f(n)$ (pertenencia a $\Omicron$) y $c_{2h}h(n) \leq f(n)$ (pertenencia a $\Omega$).
+
+\br $c_{1h}$ tiene que ser igual a $c_{1f} \cdot c_{1g}$ para garantizar que $f(n)$ esté debajo de $g(n)$ y $h(n)$; mientras que $c_{1h}$ tiene que ser igual a $c_{2f} \cdot c_{2g}$ para garantizar que $f(n)$ esté encima de $g(n)$ y $h(n)$. $n_h$ es el valor mayor entre $n_f$ y $n_g$, ya que si a partir de $n_f$ la función siempre es mayor, cuando llegue $n_g$, que es el valor que cumple la condición, hará que ambas condiciones se cumplan.
 
 \section{Reflexividad}
 
@@ -42,22 +58,30 @@
   $f(n)$ es $\Omicron(f(n))$
 \end{propiedad}
 
+\br Esta propiedad se cumple porque para pertenecer a $\Omicron$, hay un $c_f$ tal que $c_{f}f(n)) \geq f(n)$ para todo valor de $n$ a partir de cierto valor $n_f$. Al ser igual, se satisface la condición de "mayor o igual qué"; es decir, que existe un $c_f f(n) \geq f(n)$, el cual es igual a 1. $n_f$ puede ser cualquier valor de $n$, ya que siempre se cumplirá que $n_f \geq n$.
+
 \begin{propiedad}
   $f(n)$ es $\Omega(f(n))$
 \end{propiedad}
+
+\br Esta propiedad se cumple porque para pertenecer a $\Omega$, hay un $c_f$ tal que $c_{f}f(n)) \leq f(n)$ para todo valor de $n$ a partir de cierto valor $n_f$. Al ser igual, se satisface la condición de "menor o igual qué"; es decir, que existe un $c_f f(n) \leq f(n)$, el cual es igual a 1. $n_f$ puede ser cualquier valor de $n$, ya que siempre se cumplirá que $n_f \geq n$.
 
 \begin{propiedad}
   $f(n)$ es $\Theta(f(n))$
 \end{propiedad}
 
+\br Esta propiedad se cumple porque para pertenecer a $\Theta$, hay dos constantes $c_{1f}$ y $c_{2f}$ tal que $c_{1f}f(n)) \geq f(n)$ y $c_{2f}f(n)) \leq f(n)$ para todo valor de $n$ a partir de cierto valor $n_f$.
+
+\br Al ser igual, se satisface la condición de "mayor o igual qué" para el caso de $c_{1f}$, es decir, que existe un $c_{1f} f(n) \geq f(n)$, el cual es igual a 1. También se satisface la condición de "menor o igual qué" para el caso de $c_{1f}$, es decir, que existe un $c_f f(n) \leq f(n)$, el cual es igual a 1. $n_f$ puede ser cualquier valor de $n$, ya que siempre se cumplirá que $n_f \geq n$.
+
 \section{Simetría}
 \begin{propiedad}
-  $f(n)$ es $\Theta(f(n)) \Leftrightarrow g(n) \Theta(f(n))$
+  $f(n)$ es $\Theta(g(n)) \Leftrightarrow$ $g(n)$ es $\Theta(f(n))$
 \end{propiedad}
 
 \section{Simetría Transpuesta}
 \begin{propiedad}
-  $f(n)$ es $\Omicron(f(n)) \Leftrightarrow g(n) \Omicron(f(n))$
+  $f(n)$ es $\Omicron(g(n)) \Leftrightarrow$ $g(n)$ es $\Omega(f(n))$
 \end{propiedad}
 
 \section{Aditividad}
