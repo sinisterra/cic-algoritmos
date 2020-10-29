@@ -79,23 +79,41 @@
   $f(n)$ es $\Theta(g(n)) \Leftrightarrow$ $g(n)$ es $\Theta(f(n))$
 \end{propiedad}
 
+\br Para que $f(n)$ esté en $\Theta(g(n))$ se cumpla, tienen que existir 2 constantes $c_{1f}$ y $c_{2f}$ tales que $c_{1f}g(n) \geq f(n)$ y $c_{2f}g(n) \leq f(n)$ a partir de cierto valor de $n$ llamado $n_f$.
+
+\br Después, para que $g(n)$ esté en $\Theta(f(n))$, tienen que existir 2 constantes $c_{1g}$ y $c_{2g}$ tales que $c_{1g}f(n) \geq g(n)$ y $c_{2g}f(n) \leq g(n)$ a partir de cierto valor de $n$ llamado $n_g$.
+
+\br La elección de constantes que haría que se cumpla esta propiedad sería $c_{1f} = c_{2g}$ y $c_{2f} = c_{1g}$ y que $n_f = n_g$; es decir, la constante que dicta el límite superior para $\Theta(g(n))$ debe ser igual a la que define límite inferior para $\Theta(f(n))$, ya que las constantes desplazan a la función verticalmente, pero nunca la mueven de forma horizontal.
+
 \section{Simetría Transpuesta}
 \begin{propiedad}
   $f(n)$ es $\Omicron(g(n)) \Leftrightarrow$ $g(n)$ es $\Omega(f(n))$
 \end{propiedad}
 
+\br $f(n)$ es $\Omicron(g(n))$ si hay una constante $c_{f}$ tal que $c_f g(n) \geq f(n)$ para toda $n \geq n_{f}$.
+
+\br Para que $g(n)$ sea $\Omega(f(n))$ tiene que haber una constante $c_g$ tal que $c_g f(n) \leq g(n)$ para toda $n \geq n_{g}$.
+
+\br En este caso, las constantes que harían que se cumpla esta propiedad es que $c_{f}$ sea igual a $c_{g}$, ya que al pertenecer $f(n)$ a $\Omicron(g(n))$, siempre está debajo de $g(n)$, lo que desde la perspectiva de $f(n)$ indica que $g(n)$ siempre está encima de $f(n)$, confirmando la propiedad.
+
 \section{Aditividad}
-\begin{propiedad}
-  $f(n)$ es $\Theta(f(n))$ y $g(n)$ es $\Theta(h(n))$ entonces $f(n) + g(n)$ es $\Theta(h(n))$
-\end{propiedad}
 
 \begin{propiedad}
   $f(n)$ es $\Omicron(f(n))$ y $g(n)$ es $\Omicron(h(n))$ entonces $f(n) + g(n)$ es $\Omicron(h(n))$
 \end{propiedad}
 
+En este caso $f(n)$ siempre está por debajo o es igual a  $g(n)$ al pertenecer a $\Omicron$. Si $g(n)$ está debajo de $h(n)$ también, se puede recurrir a la propiedad de transitividad para indicar que $f(n)$ también está en $\Omicron(h(n))$. Al sumar $f(n)$ con $g(n)$, $f(n)$ individualmente a lo mucho puede adquirir el valor de $g(n)$, trasladando hacia arriba $g(n)$, pero sin pasar $h(n)$, ya que de lo contrario $g(n)$ ya no pertenecería a $\Omicron(h(n))$, entrando en una contradicción.
+
 \begin{propiedad}
-  $f(n)$ es $\Omega(f(n))$ y $g(n)$ es $\Omega(h(n))$ entonces $f(n) + g(n)$ es $\Omega(h(n))$
+  $f(n)$ es $\Omega(g(n))$ y $g(n)$ es $\Omega(h(n))$ entonces $f(n) + g(n)$ es $\Omega(h(n))$
 \end{propiedad}
 
+En este caso $f(n)$ siempre está encima o es igual a  $g(n)$ al pertenecer a $\Omega$. Si $g(n)$ está encima de $h(n)$ también, se puede recurrir a la propiedad de transitividad para indicar que $f(n)$ también está en $\Omega(h(n))$. Al sumar $f(n)$ con $g(n)$, $f(n)$ individualmente a lo mucho puede adquirir el valor de $g(n)$, trasladando hacia abajo $g(n)$, pero sin pasar $h(n)$, ya que de lo contrario $g(n)$ ya no pertenecería a $\Omega(h(n))$, entrando en una contradicción.
+
+\begin{propiedad}
+  $f(n)$ es $\Theta(g(n))$ y $g(n)$ es $\Theta(h(n))$ entonces $f(n) + g(n)$ es $\Theta(h(n))$
+\end{propiedad}
+
+$f(n)$ siempre está entre el producto de $g(n)$, una que hace que esté debajo de $g(n)$ y otra que hace que esté encima de $g(n)$, esto por pertenecer a $\Theta$. Si $g(n)$ está entre $h(n)$ también, se puede recurrir a la propiedad de transitividad para indicar que $f(n)$ también está en $\Theta(h(n))$. Al sumar $f(n)$ con $g(n)$, $f(n)$ individualmente a lo mucho puede adquirir el valor de $g(n)$, trasladando verticalmente $g(n)$, pero sin pasar $h(n)$, ya que de lo contrario $g(n)$ ya no pertenecería a $\Theta(h(n))$, entrando en una contradicción.
 
 \end{document}
