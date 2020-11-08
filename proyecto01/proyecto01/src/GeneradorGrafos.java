@@ -11,4 +11,8 @@ public class GeneradorGrafos {
     public static Grafo genGeografico(int n, double r, boolean dirigido, boolean auto) {
         return new Geographic(n, r, dirigido, auto);
     }
+
+    public static Grafo genBarabasiAlbert(int n, double d, boolean dirigido, boolean auto) {
+        return new BarabasiAlbert(n, d, dirigido, auto);
+    }
 }

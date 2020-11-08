@@ -11,6 +11,8 @@ public class App {
             GeneradorGrafos.genGilbert(n, 0.05, false, false).toGraphviz(String.format("gen_gilbert_%d", n));
 
             GeneradorGrafos.genGeografico(n, 0.33, false, false).toGraphviz(String.format("gen_geografico_%d", n));
+
+            GeneradorGrafos.genBarabasiAlbert(n, 5, false, false).toGraphviz(String.format("gen_BarabasiAlbert_%d", n));
         }
     }
 }

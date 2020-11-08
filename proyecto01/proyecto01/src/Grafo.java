@@ -61,6 +61,22 @@ public abstract class Grafo {
         return aristas.get(llaveArista);
     }
 
+    public int calcularGrado(int idNodo) {
+        int totalAristas = 0;
+
+        for (Arista a : aristas.values()) {
+            if (a.source.id == idNodo || a.target.id == idNodo) {
+                totalAristas++;
+            }
+        }
+
+        return totalAristas;
+    }
+
+    public int totalAristas() {
+        return aristas.size();
+    }
+
     public void toGraphviz(String nombreArchivo) throws IOException {
 
         String graphvizConectorArista = dirigido ? "->" : "--";
@@ -71,7 +87,8 @@ public abstract class Grafo {
         StringBuilder archivo = new StringBuilder()
                 .append(String.format("%s %s {\n", graphvizTipoGrafo, nombreArchivo));
 
-        nodos.forEach((nodoId, n) -> archivo.append(String.format("  nodo_%d;\n", nodoId)));
+        // nodos.forEach((nodoId, n) -> archivo.append(String.format(" nodo_%d;\n",
+        // nodoId)));
 
         aristas.forEach((aristaId, a) -> archivo
                 .append(String.format("  nodo_%d %s nodo_%d;\n", a.source.id, graphvizConectorArista, a.target.id)));
