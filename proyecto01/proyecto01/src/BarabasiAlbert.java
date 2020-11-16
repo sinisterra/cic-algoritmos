@@ -22,16 +22,6 @@ public class BarabasiAlbert extends Grafo {
       this.addNode(new Nodo(i));
     }
 
-    // for (int i = 0; i < this.d; i++) {
-    // for (int j = 0; j < this.d; j++) {
-    // if (i != j) {
-    // if (this.getArista(j, i) == null) {
-    // this.addEdge(this.getNode(i), this.getNode(j));
-    // }
-    // }
-    // }
-    // }
-
     for (int i = 0; i < n; i++) {
       for (int j = 0; j < n; j++) {
         int gradoI = this.calcularGrado(i);

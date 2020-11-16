@@ -17,7 +17,7 @@ public class Geographic extends Grafo {
     this.genGeografico();
   }
 
-  public void genGeografico() {
+  private void genGeografico() {
     HashMap<Integer, double[]> coordenadas = new HashMap<>();
     Random random = new Random();
 
