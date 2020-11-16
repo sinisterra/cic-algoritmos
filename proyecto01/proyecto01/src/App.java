@@ -8,11 +8,11 @@ public class App {
 
             System.out.println(String.format("%d nodos", n));
             System.out.println(String.format("Erdos-Renyi con %d nodos", n));
-            GeneradorGrafos.genErdosRenyi(n, (int) Math.round(n * 2.3), true, false)
+            GeneradorGrafos.genErdosRenyi(n, (int) Math.round(n * 5), true, false)
                     .toGraphviz(String.format("gen_erdos_ren_%d", n));
 
             System.out.println(String.format("Gilbert con %d nodos", n));
-            GeneradorGrafos.genGilbert(n, 0.05, false, false).toGraphviz(String.format("gen_gilbert_%d", n));
+            GeneradorGrafos.genGilbert(n, 0.2, false, false).toGraphviz(String.format("gen_gilbert_%d", n));
 
             System.out.println(String.format("Geográfico Simple con %d nodos", n));
             GeneradorGrafos.genGeografico(n, 0.33, false, false).toGraphviz(String.format("gen_geografico_%d", n));

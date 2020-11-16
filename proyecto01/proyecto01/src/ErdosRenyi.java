@@ -52,7 +52,7 @@ public class ErdosRenyi extends Grafo {
 
       // seleccionar un nuevo nodo destino entre los nodos disponibles
       // primero seleccionar un índice
-      int indiceNodoDestino = random.nextInt(nodosDisponibles.size() - 1);
+      int indiceNodoDestino = random.nextInt(nodosDisponibles.size());
       // seleccionar el nodo en el índice
       int nodoDestino = nodosDisponibles.get(indiceNodoDestino);
 

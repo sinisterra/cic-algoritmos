@@ -87,7 +87,8 @@ public abstract class Grafo {
         StringBuilder archivo = new StringBuilder()
                 .append(String.format("%s %s {\n", graphvizTipoGrafo, nombreArchivo));
 
-        nodos.forEach((nodoId, n) -> archivo.append(String.format(" nodo_%d;\n", nodoId)));
+        // nodos.forEach((nodoId, n) -> archivo.append(String.format(" nodo_%d;\n",
+        // nodoId)));
 
         aristas.forEach((aristaId, a) -> archivo
                 .append(String.format("  nodo_%d %s nodo_%d;\n", a.source.id, graphvizConectorArista, a.target.id)));
