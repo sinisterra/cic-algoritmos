@@ -1,0 +1,27 @@
+digraph gen_gilbert_30_bfs {
+  nodo_12 -> nodo_5;
+  nodo_12 -> nodo_4;
+  nodo_25 -> nodo_10;
+  nodo_15 -> nodo_1;
+  nodo_1 -> nodo_28;
+  nodo_10 -> nodo_14;
+  nodo_12 -> nodo_17;
+  nodo_13 -> nodo_6;
+  nodo_8 -> nodo_16;
+  nodo_20 -> nodo_11;
+  nodo_22 -> nodo_12;
+  nodo_21 -> nodo_29;
+  nodo_25 -> nodo_2;
+  nodo_24 -> nodo_13;
+  nodo_10 -> nodo_23;
+  nodo_5 -> nodo_3;
+  nodo_13 -> nodo_15;
+  nodo_25 -> nodo_7;
+  nodo_15 -> nodo_18;
+  nodo_21 -> nodo_8;
+  nodo_8 -> nodo_25;
+  nodo_17 -> nodo_21;
+  nodo_17 -> nodo_24;
+  nodo_0 -> nodo_22;
+  nodo_6 -> nodo_20;
+}
