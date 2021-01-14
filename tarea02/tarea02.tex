@@ -1,0 +1,45 @@
+\documentclass[hidelinks]{article}
+\usepackage[spanish]{babel}
+\usepackage{hyperref}
+\newcommand\Omicron{O}
+\newcommand{\br}{\vskip.2cm \noindent}
+
+\newtheorem{teorema}{Teorema}
+
+\author{Santiago Sinisterra Sierra}
+\title{Diseño y Análisis de Algoritmos \\ Tarea 2 - Demostraciones BFS y DFS}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{teorema}
+  Sea $T$ el árbol BFS del grafo $G = (V, E)$ y sea $(x, y)$ una arista en $T$, entonces el nivel de $x$ y $y$ difiere en 1. Demostrar.
+\end{teorema}
+
+\br De acuerdo al algoritmo BFS, un nodo  sólo puede agregarse a un capa $L_{i}$ si no pertenece a alguna capa previa $L_{k}$ donde $k \in [ 0, i-1]$.
+
+\br $T$ es un aŕbol, por lo cual no puede contener ciclos y debe existir un camino único para llegar a cada nodo.
+
+\br Intentando demostrar por contradicción, se supone que hay dos nodos $x$ y $y$ que están conectados por la arista $(x, y)$ pero que pertenecen a capas diferentes $L_{x}$ y $L_{y}$ donde $x$ y $y$ son índices y $y - x \neq 1$ (el nivel no difiere en 1). Al pertenecer a capas diferentes y T siendo un árbol, hay un único camino para cada nodo que lleva de $L_{0}$ a $L_{x}$ y otro desde $L_{0}$ hasta $L_{y}$, así como la arista $(x, y)$ que los conecta directamente.
+
+\br Esto implica que existirían dos caminos diferentes para llegar a $(x, y)$, uno que va del nodo raíz y llega a $x$ sin pasar por $(x, y)$. El segundo camino inicia en el nodo raíz, pasa por $y$ y llega a $x$ por $(x, y)$.
+
+\br Se entra a una contradicción ya que $T$ no sería un árbol porque existen 2 caminos diferentes para llegar a un mismo nodo $x$. Esto viola la proposición inicial de que $T$ es un árbol y que el nivel no difiere en 1.
+
+\br El nivel necesariamente debe diferir en 1 porque es la diferencia entre los dos caminos hipóteticos del caso de contradicción que hace que $T$ siga siendo un árbol.
+
+\br
+
+\begin{teorema}
+  Sea $T$ un árbol DFS, sean $u$ y $v$ nodos en $T$ y sea $(u, v)$ una arista en el grafo $G$ que no está en $T$. Entonces $u$ es ancestro de $v$ o $v$ es ancestro de $u$. Demostrar
+\end{teorema}
+
+\br Si la arista $(u, v)$ no está en $T$ entonces deben estar $u$ y $v$ conectados de otra forma, ya que al $T$ ser un árbol DFS, existe un camino entre cualquier par de nodos al ser un grafo conectado.
+
+\br Al ser un grafo conectado, se cumple la proposición de que $u$ es un ancestro de $v$ o $v$ es un ancestro de $u$ ya que siempre es posible llegar a $v$ desde $u$ y viceversa.
+
+
+
+\end{document}

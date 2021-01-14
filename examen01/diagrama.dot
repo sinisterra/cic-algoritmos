@@ -1,0 +1,9 @@
+graph G {
+  rankdir=LR;
+  a -- c [label="1"];
+  a -- d [label="5"];
+  c -- b [label="2"];
+  c -- f [label="3"];
+  f -- e [label="5"];
+
+}
