@@ -102,8 +102,9 @@ public class Grafo {
         // nodos.forEach((nodoId, n) -> archivo.append(String.format(" nodo_%d;\n",
         // nodoId)));
         if (dijkstra == false) {
-            aristas.forEach((aristaId, a) -> archivo.append(
-                    String.format("  nodo_%d %s nodo_%d;\n", a.source.id, graphvizConectorArista, a.target.id)));
+            aristas.forEach(
+                    (aristaId, a) -> archivo.append(String.format("  nodo_%d %s nodo_%d [label=%d weight=%d];\n",
+                            a.source.id, graphvizConectorArista, a.target.id, a.peso, a.peso)));
         }
 
         if (dijkstra == true) {
