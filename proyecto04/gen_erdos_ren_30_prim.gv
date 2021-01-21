@@ -1,0 +1,31 @@
+graph gen_erdos_ren_30_prim {
+  nodo_27 -- nodo_11 [label=3 weight=3];
+  nodo_12 -- nodo_3 [label=10 weight=10];
+  nodo_28 -- nodo_25 [label=7 weight=7];
+  nodo_17 -- nodo_8 [label=1 weight=1];
+  nodo_14 -- nodo_16 [label=1 weight=1];
+  nodo_3 -- nodo_29 [label=16 weight=16];
+  nodo_18 -- nodo_28 [label=1 weight=1];
+  nodo_7 -- nodo_28 [label=6 weight=6];
+  nodo_6 -- nodo_17 [label=11 weight=11];
+  nodo_12 -- nodo_20 [label=3 weight=3];
+  nodo_7 -- nodo_26 [label=12 weight=12];
+  nodo_22 -- nodo_16 [label=1 weight=1];
+  nodo_26 -- nodo_2 [label=3 weight=3];
+  nodo_27 -- nodo_0 [label=13 weight=13];
+  nodo_22 -- nodo_1 [label=19 weight=19];
+  nodo_5 -- nodo_18 [label=41 weight=41];
+  nodo_3 -- nodo_18 [label=1 weight=1];
+  nodo_28 -- nodo_4 [label=39 weight=39];
+  nodo_15 -- nodo_18 [label=2 weight=2];
+  nodo_11 -- nodo_17 [label=8 weight=8];
+  nodo_19 -- nodo_9 [label=6 weight=6];
+  nodo_14 -- nodo_13 [label=1 weight=1];
+  nodo_16 -- nodo_11 [label=11 weight=11];
+  nodo_18 -- nodo_13 [label=4 weight=4];
+  nodo_23 -- nodo_14 [label=13 weight=13];
+  nodo_24 -- nodo_26 [label=16 weight=16];
+  nodo_19 -- nodo_22 [label=7 weight=7];
+  nodo_7 -- nodo_10 [label=34 weight=34];
+  nodo_21 -- nodo_16 [label=37 weight=37];
+}
